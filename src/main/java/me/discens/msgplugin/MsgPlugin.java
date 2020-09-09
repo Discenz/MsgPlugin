@@ -22,14 +22,22 @@ public class MsgPlugin extends JavaPlugin {
 
     public void updateLastReceived(String user, String lastMsgPlayer) {
         LastMsg lastMsg = getLastReceived(user);
-        if(lastMsg == null) lastMsgs.add(new LastMsg(user));
-        lastMsg.setLastReceived(lastMsgPlayer);
+        if(lastMsg == null) {
+            LastMsg newMsg = new LastMsg(user);
+            newMsg.setLastReceived(lastMsgPlayer);
+            lastMsgs.add(newMsg);
+        }
+        else lastMsg.setLastReceived(lastMsgPlayer);
     }
 
     public void updateLastSent(String user, String lastMsgPlayer) {
         LastMsg lastMsg = getLastSent(user);
-        if(lastMsg == null) lastMsgs.add(new LastMsg(user));
-        lastMsg.setLastReceived(lastMsgPlayer);
+        if(lastMsg == null) {
+            LastMsg newMsg = new LastMsg(user);
+            newMsg.setLastSent(lastMsgPlayer);
+            lastMsgs.add(newMsg);
+        }
+        else lastMsg.setLastSent(lastMsgPlayer);
     }
 
     public LastMsg getLastReceived(String user) {
