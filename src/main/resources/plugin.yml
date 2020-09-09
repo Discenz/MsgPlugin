@@ -1,0 +1,19 @@
+name: MsgPlugin
+main: me.discens.msgplugin.MsgPlugin
+version: 1.0
+author: Discens, Lefton
+commands:
+  msg:
+    description: Message another player.
+    usage: /<command> playername
+    aliases: ["w", "whisper"]
+
+  r:
+    description: Reply to a players message.
+    usage: /<command>
+
+  l:
+    description: Message the last player you messaged.
+    usage: /<command>
+
+api-version: 1.15
